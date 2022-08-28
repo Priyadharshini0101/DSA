@@ -1,15 +1,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
 void countSort(int a[],int n,int k){
-int b[n],count[k+1];
-
-    for(int i=0;i<n;i++){
-    	b[i]=0;
-	}
-	for(int i=0;i<n;i++){
-		count[i]=0;
-	}
-	
+int b[n]={ },count[k+1]={ };
 	for(int i=0;i<n;i++){
 	    ++count[a[i]];
 	}
