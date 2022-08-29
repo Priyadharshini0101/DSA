@@ -1,91 +1,85 @@
-
-// C++ program for different tree traversals
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
 struct Node {
 	int data;
 	struct Node *left, *right;
 };
 
-//Utility function to create a new tree node
-Node* newNode(int data)
-{
-	Node* temp = new Node;
-	temp->data = data;
-	temp->left = temp->right = NULL;
-	return temp;
+struct Node *create(){
+	struct Node *newnode;
+	newnode=(struct Node*)malloc(sizeof(struct Node));
+	int x;
+	std::cout<<"Enter data";
+	std::cin>>x;
+	
+	if (x == -1){
+		return NULL;
+    }
+	newnode->data=x;
+	std::cout<<"Enter the left child ";
+	newnode->left=create();
+	std::cout<<"Enter the right child ";
+	newnode->right=create();
+	return newnode;
 }
 
-/* Given a binary tree, print its nodes according to the
-"bottom-up" postorder traversal. */
-void printPostorder(struct Node* node)
+void printPostorder(struct Node *node)
 {
 	if (node == NULL)
 		return;
 
-	// first recur on left subtree
 	printPostorder(node->left);
 
-	// then recur on right subtree
 	printPostorder(node->right);
 
-	// now deal with the node
-	cout << node->data << " ";
+	std::cout << node->data << " ";
 }
 
-/* Given a binary tree, print its nodes in inorder*/
-void printInorder(struct Node* node)
+void printInorder(struct Node *node)
 {
 	if (node == NULL)
 		return;
 
-	/* first recur on left child */
 	printInorder(node->left);
      
-	/* then print the data of node */
-	cout << node->data << " ";
+	std::cout << node->data << " ";
 
-	/* now recur on right child */
 	printInorder(node->right);
       
 }
 
-/* Given a binary tree, print its nodes in preorder*/
-void printPreorder(struct Node* node)
+void printPreorder(struct Node *node)
 {
 	if (node == NULL)
 		return;
 
-	/* first print data of node */
-	cout << node->data << " ";
+	std::cout << node->data << " ";
 
-	/* then recur on left subtree */
 	printPreorder(node->left);
 
-	/* now recur on right subtree */
 	printPreorder(node->right);
 }
 
-/* Driver program to test above functions*/
 int main()
-{
-	struct Node* root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
-	root->left->right = newNode(5);
-
-	// cout << "\nPreorder traversal of binary tree is \n";
-	// printPreorder(root);
-
-	cout << "\nInorder traversal of binary tree is \n";
-	printInorder(root);
-
-	// cout << "\nPostorder traversal of binary tree is \n";
-	// printPostorder(root);
-
+{	
+    struct Node *root = NULL;	
+	int choice;
+	while(1){
+		std::cout<<"Enter the choice:\n1.Create Tree\n2.PreOrder\n3.Inorder\n4.PostOrder";
+		std::cin>>choice;
+		switch(choice){
+			case 1:	root=create();
+			break;
+			case 2:printPreorder(root);
+			break;
+			case 3:printInorder(root);
+			break;
+			case 4:printPostorder(root);
+			break;
+			default:exit(0);
+		}
+	}
 	return 0;
 }
