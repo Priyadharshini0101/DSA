@@ -78,12 +78,18 @@ class HashMap{
 
 int main(){
     HashMap<int,int> hashMap;
+
     hashMap.put(100,10);
     hashMap.put(200,20);
     hashMap.put(500,30);
+
     std::cout<<hashMap.get(500)<<"\n";
+
     hashMap.removeElement(100);
+
     std::cout<<"Contains : "<<hashMap.contains(100)<<"\n";
+
     std::cout<<hashMap.size()<<"\n";
+    
     return 0;
 }
