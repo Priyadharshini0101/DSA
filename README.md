@@ -23,6 +23,18 @@
   <li>Deque</li>
 </ul>
 <h2>Tree</h2>
+<ul>
+  <li>AVL Tree(Adelson-VelskyandLandistree)</li>
+  <li>Binary Indexed Tree</li>
+  <li>Binary Search Tree</li>
+  <li>N-ary Tree</li>
+  <li>Red Black Tree</li>
+  <li>Segment Tree</li>
+  <li>Splay Tree</li>
+  <li>Min-max Heap</li>
+  <li>Tree Traversal</li>
+  <li>Trie</li>
+</ul>
 <h2>Sorting</h2>
 <ul>
   <li>Selection Sort</li>
@@ -33,6 +45,7 @@
   <li>Count Sort</li>
   <li>Shell Sort</li>
   <li>Radix Sort</li>
+  <li>Heap Sort</li>
 </ul>
 <h2>Searching</h2>
 <ul>
