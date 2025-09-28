@@ -1,6 +1,6 @@
 # DSA
 
-<h1>List</h1>
+<h4>List</h4>
 <ul>
   <li>Linked List</li>
 </ul>
